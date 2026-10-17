@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#a50034"><meta name="description" content="CrossCountry railway staff departures and running information">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+<title>XC Staff Rail</title>
+</head>
+<body>
+<header class="topbar"><div class="brand-mark" aria-hidden="true">XC</div><div><h1>XC Staff Rail</h1><p>Departures · Running information · Staff tools</p></div><span class="live-pill" id="connectionState">DEMO MODE</span></header>
+<main>
+<section class="panel search-panel">
+<div class="section-heading"><div><p class="eyebrow">NATIONAL RAIL · DARWIN</p><h2>Station departures</h2></div><button class="button secondary" id="refreshBtn">↻ Refresh</button></div>
+<form id="searchForm">
+<label for="stationInput">Station name or CRS code</label>
+<div class="search-row"><input id="stationInput" autocomplete="off" placeholder="e.g. Newcastle or NCL" value="Newcastle" required><button class="button primary" type="submit">Get trains</button></div>
+<div class="form-grid"><div><label for="countSelect">Number of services</label><select id="countSelect"><option value="10">10 services</option><option value="20" selected>20 services</option><option value="30">30 services</option></select></div><div><label for="filterInput">Filter results</label><input id="filterInput" placeholder="Destination, operator, platform…"></div></div>
+<p class="hint">Live Darwin data requires a National Rail Data (Darwin) access token configured on the server. Demo data is shown until connected.</p>
+</form>
+</section>
+<section class="panel results-panel">
+<div class="section-heading"><div><p class="eyebrow">LIVE BOARD</p><h2 id="boardTitle">Newcastle departures</h2><p class="subline" id="lastUpdated">Example data · not live</p></div><div class="toolbar"><button class="button secondary" id="copyBtn">Copy</button><button class="button secondary" id="emailBtn">Email</button><button class="button secondary" id="pdfBtn">Print / PDF</button></div></div>
+<div id="statusMessage" class="status" role="status">Showing sample departures. Connect Darwin to use live running information.</div>
+<div id="departures" class="departures" aria-live="polite"></div>
+</section>
+<section class="panel detail-panel" id="detailPanel" hidden>
+<div class="section-heading"><div><p class="eyebrow">SERVICE DETAILS</p><h2 id="detailTitle">Train details</h2></div><button class="button secondary" id="closeDetails">Close</button></div>
+<div id="serviceDetails"></div>
+<div class="toolbar detail-actions"><button class="button secondary" id="copyDetailBtn">Copy details</button><button class="button secondary" id="emailDetailBtn">Email details</button><button class="button secondary" id="pdfDetailBtn">Print / PDF</button></div>
+</section>
+<footer><span>XC Staff Rail</span><span>For operational awareness. Always follow official railway systems and procedures.</span></footer>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="app.js"></script>
+</body></html>

@@ -1,0 +1,13 @@
+{
+  "name": "XC Staff Rail",
+  "short_name": "XC Staff Rail",
+  "description": "CrossCountry staff departures and train running information",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f4f6",
+  "theme_color": "#a50034",
+  "icons": [
+    {"src":"xc-staff-rail-logo.png","sizes":"1024x1024","type":"image/png","purpose":"any maskable"}
+  ]
+}
